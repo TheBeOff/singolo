@@ -9,43 +9,50 @@
 </head>
 <body>
     <header class="header">
+        <a name="home"></a>
         <div class="header-wrapper">
             <div class="header__logo">
                 <h1>SINGOLO<span class="colored">*</span></h1>
             </div>
                 <nav class="navigation">
-                    <ul>
-                        <li><a href="#" class="colored">HOME</a></li>
-                        <li><a href="#">SEVICES</a></li>
-                        <li><a href="#">PORTFOLIO</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">CONTACT</a></li>
+                    <ul id="menu">
+                        <li><a href="#home" class="colored">HOME</a></li>
+                        <li><a href="#services">SEVICES</a></li>
+                        <li><a href="#portfolio">PORTFOLIO</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
     
         </div>
     </header>
     <section class="phones">
-        <div class="phones-wrapper">
-            <div class="chev-left">
-                <img src="assets/chev_left.png" alt="Стрелка влево">
-            </div>
-            <div class="first-phone">
-                <img src="assets/Base.png" alt="База" class="base1">
-                <img src="assets/Shadow.png" alt="Тень" class="shadow1">
-                <img src="assets/Screen.png" alt="Экран" class="screen1">                    
-            </div>
-            <div class="second-phone">
-                <img src="assets/HBase.png" alt="База" class="base2">
-                <img src="assets/Shadow2.png" alt="Тень" class="shadow2">
-                <img src="assets/HScreen.png" alt="Экран" class="screen2">
-            </div>
-            <div class="chev-right">
-                <img src="assets/chev_right.png" alt="Стрелка влево">
-            </div>
+        <div class="slide active">
+                <div class="first-phone" id="first">
+                    <img src="assets/Base.png" alt="База" class="base1">
+                    <img src="assets/Shadow.png" alt="Тень" class="shadow1">
+                    <img src="assets/ScreenVertical.png" alt="Screen" class="screen1">
+                    <img src="assets/Screen.png" alt="Экран" class="screen1 visible">                    
+                </div>
+                <div class="second-phone" id="second">
+                    <img src="assets/HBase.png" alt="База" class="base2">
+                    <img src="assets/Shadow2.png" alt="Тень" class="shadow2">
+                    <img src="assets/ScreenHorizontal.png" alt="Screen" class="screen2">
+                    <img src="assets/HScreen.png" alt="Экран" class="screen2 visible">
+                </div>          
+        </div>
+        <div class="slide">
+            <img src="assets/Slider.png">
+        </div> 
+        <div class="chev-left">
+            <img src="assets/chev_left.png" alt="Стрелка влево">
+        </div>
+        <div class="chev-right">
+            <img src="assets/chev_right.png" alt="Стрелка влево">
         </div>
     </section>
     <section class="services">
+        <a name="services"></a>
         <div class="services-wrapper">
             <div style="height:0.1px"></div>
             <div class="service-top">
@@ -117,40 +124,42 @@
     </section>
 
     <section class="portfolio">
+        <a name="portfolio"></a>
         <div class="portfolio-wrapper">
             <div class="portfolio-text">
                 <h2>Portfolio</h2>
                 <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
             </div>
-            <div class="columns-4">
-                <button class="all"><p class="colored">All</p></button>
-                <button class="web-design"><p>Web Design</p></button>
-                <button class="graphic-design"><p>Graphic Design</p></button>
-                <button class="artwork"><p>Artwork</p></button>
+            <div class="columns-4" id="buttons">
+                <button class="all colored" id="all">All</button>
+                <button class="web-design" id="web-design">Web Design</button>
+                <button class="graphic-design" id="graphic-design">Graphic Design</button>
+                <button class="artwork" id="artwork">Artwork</button>
             </div>
-            <div class="images-wrapper">
+            <div class="images-wrapper" id="images">
                 <div class="image-columns">
-                    <img src="assets/first.png" alt="Картинка">
-                    <img src="assets/Second.png" alt="Картинка">
-                    <img src="assets/third.png" alt="Картинка">
-                    <img src="assets/fourth.png" alt="Картинка">
+                    <img src="assets/first.png" alt="Картинка" id="image1" class="">
+                    <img src="assets/Second.png" alt="Картинка" id="image2" class="">
+                    <img src="assets/third.png" alt="Картинка" id="image3" class="">
+                    <img src="assets/fourth.png" alt="Картинка" id="image4" class="">
                 </div>
                 <div class="image-columns">
-                    <img src="assets/fifth.png" alt="Картинка">
-                    <img src="assets/sixth.png" alt="Картинка">
-                    <img src="assets/seventh.png" alt="Картинка">
-                    <img src="assets/eighth.png" alt="Картинка">
+                    <img src="assets/fifth.png" alt="Картинка" id="image5" class="">
+                    <img src="assets/sixth.png" alt="Картинка" id="image6" class="">
+                    <img src="assets/seventh.png" alt="Картинка" id="image7" class="">
+                    <img src="assets/eighth.png" alt="Картинка" id="image8" class="">
                 </div>
                 <div class="image-columns">
-                    <img src="assets/ninth.png" alt="Картинка">
-                    <img src="assets/tenth.png" alt="Картинка">
-                    <img src="assets/eleventh.png" alt="Картинка">
-                    <img src="assets/twelth.png" alt="Картинка">
+                    <img src="assets/ninth.png" alt="Картинка" id="image9" class="">
+                    <img src="assets/tenth.png" alt="Картинка" id="image10" class="">
+                    <img src="assets/eleventh.png" alt="Картинка" id="image11" class="">
+                    <img src="assets/twelth.png" alt="Картинка" id="image12" class="">
                 </div>
             </div>
         </div>
     </section>
     <section class="about-us">
+        <a name="about"></a>
         <div class="about-us-wrapper">
             <div class="about-us-text">
                 <h2>About Us</h2>
@@ -194,6 +203,7 @@
     </section>
 
     <section class="quote">
+        <a name="contact"></a>
         <div class="quote-wrapper">
         <div class="quote-text">
             <h2>Get a Quote</h2>
@@ -230,5 +240,7 @@
             <img src="assets/Ellipse 2.png" alt="Lin" class="linkedin">
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

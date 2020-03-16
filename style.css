@@ -20,6 +20,9 @@ html body {
 body {
     width: 1020px;
 }
+.header {
+    display: fixed;
+}
 
 .header-wrapper {
     display: flex;
@@ -73,13 +76,69 @@ ul li a {
     color: #ef6c64 ;
 }
 
-.phones-wrapper {
+.phones {
+    position: relative;
+    height: 595px;
+    width: 1020px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
     position: relative;
     height: 595px;
     width: 1020px;
     background-color: #ef6c64;
     border-bottom: 5px solid #ea666b;
+    animation: .5s ease-in-out;
 }
+
+.active, .next {
+    display: block;
+}
+
+.next {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.to-left {
+    animation-name: left;
+}
+
+.to-right {
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.from-right {
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
 
 .base1, .shadow1, .screen1 {
     position: absolute;
@@ -87,23 +146,20 @@ ul li a {
     top: 53px;
 }
 
+
 .base1 {
     z-index: 1;
 }
 
 .screen1 {
+    display: none;
     z-index: 2;
     left: 123px;
     top: 115px;
     border: 3px solid #c6c6c6;
 }
 
-.screen1:hover {
-    border: 3px solid #f2f2f2;
-}
-
-
-.base2, .shadow2, .screen2 {
+.base2, .shadow2, .screen2  {
     position: absolute;
     left: 425px;
     top: 174px;
@@ -119,31 +175,36 @@ ul li a {
 }
 
 .screen2 {
+    display: none;
     z-index: 3;
     left: 482px;
     top: 185px ;
     border: 3px solid #c6c6c6;
 }
 
-.screen2:hover {
-    border: 3px solid #f2f2f2;
+.visible {
+    display: block;
 }
+
 
 .chev-left {
     position: absolute;
     left: 42px;
     top: 281px;
+    z-index: 101;
 }
 
 .chev-right {
     position: absolute;
     right: 40px;
     top: 281px;
+    z-index: 101;
 }
 
 .chev-left, .chev-right {
     cursor: pointer;
 }
+
 
 
 .services-wrapper {
@@ -252,12 +313,15 @@ ul li a {
     background-color: #2d303a;
     border: 1px solid #666d89;
     margin-right: 6px;
+    font-family: "Lato-Regular", sans-serif;
+    font-size: 12px;
+    line-height: 0px;
+    color: #767e9e;
 }
 
 .columns-4 .all{
     width: 29px;
     height: 22px;
-    border: 1px solid #c5c5c5;
 }
 
 .columns-4 .web-design{
@@ -266,7 +330,7 @@ ul li a {
 }
 
 .columns-4 .graphic-design{
-    width: 93px;
+    width: 95px;
     height: 22px;
 }
 
@@ -275,20 +339,9 @@ ul li a {
     height: 22px;
 }
 
-.columns-4 button p {
-    font-family: "Lato-Regular", sans-serif;
-    font-size: 12px;
-    line-height: 0px;
-    color: #767e9e;
-}
-
-.columns-4 .graphic-design p {
-    width: 81px;
-    margin-left: -1px;
-}
-
-.columns-4 button p.colored {
+.columns-4  .colored {
     color: #dedede;
+    border: 1px solid #c5c5c5;
 }
 
 .portfolio .images-wrapper {
@@ -302,6 +355,10 @@ ul li a {
 
 .portfolio .image-columns img {
     margin-right: 16px;
+}
+
+.border {
+    border: 5px solid #f06c64;
 }
 
 .about-us-wrapper {
