@@ -1,10 +1,31 @@
 /*-------     HEADER     -------*/
 const MENU  = document.getElementById('menu');
+const BUTTON = document.getElementById('button');
+const BUTTON_CLOSE = document.getElementById('button-close')
 
 MENU.addEventListener('click', function(event) {
     MENU.querySelectorAll('a').forEach(elem => elem.classList.remove('colored'));
     event.target.classList.add('colored');
 })
+
+document.addEventListener('scroll', onScroll);
+
+function onScroll(event) {
+    let currentPos = window.scrollY;
+    let sections = document.querySelectorAll('body > header, section');
+    let links = document.querySelectorAll('#menu a');
+
+    sections.forEach(el => {
+        if(el.offsetTop <= currentPos && (el.offsetTop + el.offsetHeight) > currentPos || currentPos == 2586) {
+            links.forEach(a => {
+                a.classList.remove('colored');
+                if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                    a.classList.add('colored');
+                }
+            })
+        }
+    })
+}
 
 /*-------     SLIDER     -------*/
 
@@ -97,7 +118,6 @@ let webDesign = document.getElementById('web-design');
 let graphicDesign = document.getElementById('graphic-design');
 let artwork = document.getElementById('artwork');
 
-
 let img1 = document.getElementById('image1').src;
 let img2 = document.getElementById('image2').src;
 let img3 = document.getElementById('image3').src;
@@ -171,13 +191,41 @@ artwork.addEventListener('click', function() {
     document.getElementById('image12').src = img6;
 })
 
-let images = document.getElementById('images');
+let images = document.querySelectorAll('.portfolio-img');
 
-images.addEventListener('click', function(elem) {
-    images.querySelectorAll('img').forEach(el => {
-        el.classList.remove('border');
+for (elem of images) {
+    elem.addEventListener('click',function(el) {
+        images.forEach(elem => elem.classList.remove('border'));
+        el.target.classList.add('border');
     })
-    elem.target.classList.remove('border');
-    elem.target.classList.add('border');
+}
+
+/*-------     FORM     -------*/
+
+BUTTON.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelector('body').classList.add('overflow');
+    let subject = document.getElementById('subject').value.toString();
+    let comment = document.getElementById('comment').value.toString();
+    if (subject == '') {
+        document.getElementById('subject-p').innerHTML = 'Без темы';
+    } else {
+        document.getElementById('subject-result').innerText = subject;
+    }
+    if (comment == '') {
+        document.getElementById('comment-p').innerHTML = 'Без описания';
+    } else {
+        document.getElementById('comment-result').innerText = comment;
+    };
+    document.getElementById('message-box').classList.remove('hidden');
     
+})
+
+BUTTON_CLOSE.addEventListener('click',function() {
+    document.getElementById('message-box').classList.add('hidden');
+    document.querySelector('body').classList.remove('overflow');
+    document.getElementById('name').value = '';
+    document.getElementById('mail').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('comment').value = '';
 })

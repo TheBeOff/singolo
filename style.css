@@ -20,16 +20,24 @@ html body {
 body {
     width: 1020px;
 }
+
+body, html {
+    scroll-behavior: smooth;
+}
+
 .header {
-    display: fixed;
+    min-height: 95px;
 }
 
 .header-wrapper {
     display: flex;
+    position: fixed;
     height: 90px;
+    width: 1020px;
     background-color: #2d2f39;
     border-bottom: 5px solid #323645;
     justify-content: space-between;
+    z-index: 10011;
 }
 
 .header__logo {
@@ -223,7 +231,6 @@ ul li a {
 }
 
 .service-top p {
-    width: 940px;
     font-family: 'Lato-light';
     font-size: 18px;
     color: #666d89;
@@ -239,7 +246,6 @@ ul li a {
 .block {
     display: flex;
     color: #666d89;
-    width: 320px ;
 }
 
 .block h3 {
@@ -264,6 +270,8 @@ ul li a {
 }
 
 .service-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin: 46px 0 0 40px;
 }
 
@@ -275,6 +283,10 @@ ul li a {
 
 .portfolio-wrapper, .about-us-wrapper{ 
     padding: 0 40px 0 40px;
+}
+
+.portfolio {
+    width: 1020px;
 }
 
 .portfolio-wrapper {
@@ -345,6 +357,8 @@ ul li a {
 }
 
 .portfolio .images-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     height: 600px;
     width: 980px;
 }
@@ -660,4 +674,111 @@ ul li a {
 
 .footer .footer-images .linkedin:hover {
     background-image: url(assets/linkedin_black.png);
+}
+
+#message-box {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 2586px;
+    left: 0;
+    background-color: #0008;
+}
+
+#message-box.hidden {
+    display: none;
+}
+
+#message {
+    position: absolute;
+    top: 43%;
+    left: 35%;
+    width: 500px;
+    height: 150px;
+    background-color: #f48c8f;
+    box-shadow: 0px 0px 20px 5px #FFFB73;
+    text-align: center;
+    line-height: 33px;
+    color: white;
+}
+
+.button-close {
+    width: 100px;
+    cursor: pointer;
+    background-color: #FFFB73;
+    border-radius: 5px;
+    border: none;
+    font-family: "Lato-Regular";
+    font-size: 15px;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+@media (max-width: 1019px) {
+    .header-wrapper {
+        max-width: 100vw;
+    }
+    .phones {
+        max-width: 100vw;
+        height: 59vw;
+    }
+    .base1 {
+        width: 21vw;
+        left: 11vw;
+        top: 5vw;
+    }
+    .shadow1 {
+        width: 23.6vw;
+        left: 11vw;
+        top: 5vw;
+    }
+    .screen1 {
+        width: 18.5vw;
+        left: 12vw;
+        top: 11vw;
+    }
+    .base2 {
+        width: 44.5vw;
+        left: 42vw;
+        top: 17vw;
+    }
+    .shadow2 {
+        width: 47vw;
+        left: 42vw;
+        top: 17vw;
+    }
+    .screen2 {
+        width: 32vw;
+        left: 47.6vw;
+        top: 18vw;
+    }
+    .services-wrapper {
+        max-width: 100vw;
+        height: 79vh;
+    }
+    .service-bottom {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .portfolio {
+        max-width: 100vw;
+    }
+    .portfolio-wrapper {
+        height: 129vh;
+    }
+    .portfolio .images-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .about-us {
+        max-width: 100vw;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .service-bottom {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
