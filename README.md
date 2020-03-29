@@ -1,2 +1,2 @@
 # singolo
-https://thebeoff.github.io/index
+https://thebeoff.github.io/singolo/index
